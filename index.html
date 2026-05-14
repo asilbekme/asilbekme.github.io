@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +7,82 @@
     <link rel="stylesheet" href="./src/output.css" />
   </head>
   <body>
-    <section class="w-full py-10">
-      <div class="max-w-6xl mx-auto px-5">
-        <h1 class="text-3xl font-bold">Salom, men Asilbekman</h1>
+    <nav class="w-full bg-black/70 backdrop-blur-md py-2.5 sticky top-0 z-50">
+      <div class="container max-w-7xl flex items-center justify-between">
+        <a href="/" class="text-white font-bold text-xl">Asilbek</a>
+        <div>
+          <ul class="flex space-x-4">
+            <li>
+              <a
+                href="#about"
+                data-lang="about"
+                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
+                >Men haqimda</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                data-lang="skills"
+                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
+                >Mening ko'nikmalarim</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                data-lang="projects_title"
+                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
+                >Mening loyihalarim</a
+              >
+            </li>
+            <li>
+              <a
+                href="#certificates"
+                data-lang="certificates"
+                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
+                >Mening sertifikatlarim</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                data-lang="contact"
+                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
+                >Men bilan bog'lanish</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="about" class="w-full h-screen bg-red-500 scroll-mt-16">
+      <div class="container max-w-7xl">
+        <h2>Men haqimda</h2>
+      </div>
+    </section>
+    <section id="skills" class="w-full bg-blue-500 h-screen scroll-mt-16">
+      <div class="container max-w-7xl">
+        <h2>Mening ko'nikmalarim</h2>
+      </div>
+    </section>
+    <section id="projects" class="w-full bg-green-500 h-screen scroll-mt-15">
+      <div class="container max-w-7xl">
+        <h2>Mening loyihalarim</h2>
+      </div>
+    </section>
+    <section
+      id="certificates"
+      class="w-full bg-yellow-500 h-screen scroll-mt-16"
+    >
+      <div class="container max-w-7xl">
+        <h2>Mening sertifikatlarim</h2>
+      </div>
+    </section>
+    <section id="contact" class="w-full bg-gray-500 h-screen scroll-mt-16">
+      <div class="container max-w-7xl">
+        <h2>Men bilan bo'glanish</h2>
       </div>
     </section>
     <script src="./src/script.js"></script>
