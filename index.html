@@ -5,82 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Asilbek</title>
     <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.css"
+      integrity="sha512-LaxQmGd9k/pW51CsEy2nLIlbUXCgsyvUEVT5fSguN2b2OBwHjMi2aiUdEEXSMg8Jvy+bCB01as61aNrHnL2DYQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
-  <body>
-    <nav class="w-full bg-black/70 backdrop-blur-md py-2.5 sticky top-0 z-50">
+  <body
+    class="font-fira bg-white text-black dark:bg-black dark:text-white transition-colors duration-500"
+  >
+    <nav
+      class="bg-white/80 dark:bg-black/70 backdrop-blur-md py-2.5 sticky top-0 z-50 transition-colors duration-500 border-b border-black dark:border-white"
+    >
       <div class="container max-w-7xl flex items-center justify-between">
-        <a href="/" class="text-white font-bold text-xl">Asilbek</a>
-        <div>
-          <ul class="flex space-x-4">
-            <li>
-              <a
-                href="#about"
-                data-lang="about"
-                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
-                >Men haqimda</a
-              >
-            </li>
-            <li>
-              <a
-                href="#skills"
-                data-lang="skills"
-                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
-                >Mening ko'nikmalarim</a
-              >
-            </li>
-            <li>
-              <a
-                href="#projects"
-                data-lang="projects_title"
-                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
-                >Mening loyihalarim</a
-              >
-            </li>
-            <li>
-              <a
-                href="#certificates"
-                data-lang="certificates"
-                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
-                >Mening sertifikatlarim</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                data-lang="contact"
-                class="text-gray-200 hover:text-blue-400 transition-all duration-300 text-sm"
-                >Men bilan bog'lanish</a
-              >
-            </li>
-          </ul>
+        <a
+          href="/"
+          class="text-black dark:text-white font-medium text-xl transition-colors duration-500"
+          >Asilbek</a
+        >
+        <ul class="flex space-x-4">
+          <li>
+            <a
+              href="#about"
+              data-lang="about"
+              class="nav-link relative group text-black dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-400 transition-all duration-500 text-sm"
+              >Men haqimda
+              <span
+                class="active-indicator absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300"
+              ></span
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#skills"
+              data-lang="skills"
+              class="text-black dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-400 transition-all duration-500 text-sm"
+              >Ko'nikmalarim</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              data-lang="projects_title"
+              class="text-black dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-400 transition-all duration-500 text-sm"
+              >Loyihalarim</a
+            >
+          </li>
+          <li>
+            <a
+              href="#certificates"
+              data-lang="certificates"
+              class="text-black dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-400 transition-all duration-500 text-sm"
+              >Sertifikatlar</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              data-lang="contact"
+              class="text-black dark:text-gray-200 hover:text-blue-400 dark:hover:text-blue-400 transition-all duration-500 text-sm"
+              >Aloqa</a
+            >
+          </li>
+        </ul>
+        <div class="flex items-center space-x-4">
+          <div>
+            <button
+              onclick="setLanguage('uz')"
+              class="lang-btn text-xs px-2 py-1 rounded border transition-all duration-500"
+            >
+              UZ
+            </button>
+            <button
+              onclick="setLanguage('ru')"
+              class="lang-btn text-xs px-2 py-1 rounded border transition-all duration-500"
+            >
+              RU
+            </button>
+            <button
+              onclick="setLanguage('en')"
+              class="lang-btn text-xs px-2 py-1 rounded border transition-all duration-500"
+            >
+              EN
+            </button>
+            <button
+              onclick="setLanguage('tr')"
+              class="lang-btn text-xs px-2 py-1 rounded border transition-all duration-500"
+            >
+              TR
+            </button>
+          </div>
+
+          <div
+            class="flex items-center space-x-2 ml-4 pl-4 border-l border-black dark:border-white"
+          >
+            <button
+              onclick="toggleTheme()"
+              class="p-2 rounded-full border border-gray-600 text-white flex items-center justify-center w-8 h-8"
+            >
+              <i
+                id="theme-icon"
+                data-lucide="moon"
+                class="w-5 h-5 text-black dark:text-white transition-colors duration-500"
+              ></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
 
-    <section id="about" class="w-full h-screen bg-red-500 scroll-mt-16">
+    <section id="about" class="w-full h-screen mt-2.5 scroll-mt-[70px]">
       <div class="container max-w-7xl">
         <h2>Men haqimda</h2>
       </div>
     </section>
-    <section id="skills" class="w-full bg-blue-500 h-screen scroll-mt-16">
+    <section id="skills" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Mening ko'nikmalarim</h2>
       </div>
     </section>
-    <section id="projects" class="w-full bg-green-500 h-screen scroll-mt-15">
+    <section id="projects" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Mening loyihalarim</h2>
       </div>
     </section>
-    <section
-      id="certificates"
-      class="w-full bg-yellow-500 h-screen scroll-mt-16"
-    >
+    <section id="certificates" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Mening sertifikatlarim</h2>
       </div>
     </section>
-    <section id="contact" class="w-full bg-gray-500 h-screen scroll-mt-16">
+    <section id="contact" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Men bilan bo'glanish</h2>
       </div>
