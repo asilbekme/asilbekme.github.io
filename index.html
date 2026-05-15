@@ -26,7 +26,7 @@
           class="text-black dark:text-white font-medium text-xl transition-colors duration-500"
           >Asilbek</a
         >
-        <ul class="flex space-x-4">
+        <ul class="hidden md:flex space-x-4">
           <li>
             <a
               href="#about"
@@ -72,7 +72,7 @@
           </li>
         </ul>
         <div class="flex items-center space-x-4">
-          <div>
+          <div class="hidden md:flex items-start justify-between space-x-2 border-r border-black dark:border-white pr-3">
             <button
               onclick="setLanguage('uz')"
               class="lang-btn text-xs px-2 py-1 rounded border transition-all duration-500"
@@ -100,7 +100,7 @@
           </div>
 
           <div
-            class="flex items-center space-x-2 ml-4 pl-4 border-l border-black dark:border-white"
+            class="flex items-center space-x-2"
           >
             <button
               onclick="toggleTheme()"
