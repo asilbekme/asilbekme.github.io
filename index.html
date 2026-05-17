@@ -3,7 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asilbek</title>
+    <title>Asilbek | Portfolio — Web Developer & Designer</title>
+    <meta
+      name="description"
+      content="Asilbekning shaxsiy portfoliom sayti. Zamonaviy veb-saytlar, interaktiv interfeyslar va dasturlash yechimlari. Men bilan bog'laning va loyihalaringizni amalga oshiring."
+    />
+    <meta
+      name="keywords"
+      content="Asilbek, portfolio, web developer, dasturchi, frontend, backend, veb-sayt yaratish, portfolio uzbekistan"
+    />
+    <meta name="author" content="Asilbek" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://asilbekkme.github.io/" />
+    <meta property="og:title" content="Asilbek | Portfolio — Web Developer" />
+    <meta
+      property="og:description"
+      content="Zamonaviy va mukammal veb-saytlar yaratish. Loyihalar va tajriba bilan tanishing."
+    />
+    <meta
+      property="og:image"
+      content="https://asilbekkme.github.io/assets/og-image.jpg"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://asilbekkme.github.io" />
+    <meta property="twitter:title" content="Asilbek | Portfolio" />
+    <meta
+      property="twitter:description"
+      content="Zamonaviy va mukammal veb-saytlar yaratish."
+    />
+    <meta
+      property="twitter:image"
+      content="https://asilbekkme.github.io/assets/og-image.jpg"
+    />
+
+    <meta
+      name="google-site-verification"
+      content="DfNMclO_cri8zcP3wN2m0SLPDBGRenzfnpHehmpa0tk"
+    />
+
     <link rel="stylesheet" href="./src/output.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <link
@@ -17,8 +57,9 @@
   <body
     class="font-fira bg-white text-black dark:bg-black dark:text-white transition-colors duration-500"
   >
+    <!-- ! Navbar -->
     <nav
-      class="bg-white/80 dark:bg-black/70 backdrop-blur-md py-2.5 sticky top-0 z-50 transition-colors duration-500 border-b border-black dark:border-white"
+      class="bg-white/80 dark:bg-black/50 backdrop-blur-md py-2.5 sticky top-0 z-50 transition-colors duration-500 border-b border-black dark:border-white"
     >
       <div class="container max-w-7xl flex items-center justify-between">
         <a
@@ -26,7 +67,9 @@
           class="text-black dark:text-white font-medium text-xl transition-colors duration-500"
           >Asilbek</a
         >
-        <ul class="hidden md:flex space-x-4">
+
+        <!-- ! Desktop nav item -->
+        <ul class="hidden lg:flex space-x-4">
           <li>
             <a
               href="#about"
@@ -71,8 +114,12 @@
             >
           </li>
         </ul>
+
         <div class="flex items-center space-x-4">
-          <div class="hidden md:flex items-start justify-between space-x-2 border-r border-black dark:border-white pr-3">
+          <!-- ! Language selector -->
+          <div
+            class="hidden lg:flex items-start justify-between space-x-2 border-r border-black dark:border-white pr-3"
+          >
             <button
               onclick="setLanguage('uz')"
               class="lang-btn text-xs px-2 py-1 rounded border transition-all duration-500"
@@ -99,49 +146,136 @@
             </button>
           </div>
 
-          <div
-            class="flex items-center space-x-2"
-          >
+          <!-- ! Theme toggle -->
+          <div class="flex items-center space-x-1 md:space-x-3">
             <button
               onclick="toggleTheme()"
-              class="p-2 rounded-full border border-gray-600 text-white flex items-center justify-center w-8 h-8"
+              class="p-2 rounded-lg lg:rounded-full border border-gray-600 text-white flex items-center justify-center w-8 h-8"
             >
               <i
                 id="theme-icon"
                 data-lucide="moon"
-                class="w-5 h-5 text-black dark:text-white transition-colors duration-500"
+                class="w-6 h-6 text-black dark:text-white transition-colors duration-500"
               ></i>
             </button>
+
+            <!-- Mobile menu button -->
+            <div class="inline-block text-left w-full p-4 lg:hidden">
+              <button
+                id="menu-toggle-btn"
+                class="px-2 py-1.5 bg-transparent border border-black dark:border-white rounded-md transition-colors duration-500"
+              >
+                <i
+                  data-lucide="menu"
+                  class="w-4 h-4 text-black btn-text dark:text-white transition-colors duration-500 lg:hidden"
+                ></i>
+              </button>
+
+              <div
+                id="mobile-dropdown"
+                class="hidden absolute left-0 right-0 mt-4 bg-white dark:bg-black rounded-md shadow-lg z-50"
+              >
+                <div class="py-1">
+                  <a
+                    href="#about"
+                    data-lang="about"
+                    class="block px-4 py-3 text-black dark:text-white"
+                    >Bosh sahifa</a
+                  >
+                  <a
+                    href="#skills"
+                    data-lang="skills"
+                    class="block px-4 py-3 text-black dark:text-white"
+                    >Ko'nikmalar</a
+                  >
+                  <a
+                    href="#projects"
+                    data-lang="projects"
+                    class="block px-4 py-3 text-black dark:text-white"
+                    >Loyihalar</a
+                  >
+                  <a
+                    href="#certificates"
+                    data-lang="certificates"
+                    class="block px-4 py-3 text-black dark:text-white"
+                    >Sertifikatlar</a
+                  >
+                  <a
+                    href="#contact"
+                    data-lang="contact"
+                    class="block px-4 py-3 text-black dark:text-white"
+                    >Aloqa</a
+                  >
+                </div>
+                <div class="flex items-center justify-end space-x-4">
+                  <button
+                    onclick="setLanguage('uz')"
+                    class="lang-btn text-sm px-2 py-1 rounded border transition-all duration-500"
+                  >
+                    UZ
+                  </button>
+                  <button
+                    onclick="setLanguage('ru')"
+                    class="lang-btn text-sm px-2 py-1 rounded border transition-all duration-500"
+                  >
+                    RU
+                  </button>
+                  <button
+                    onclick="setLanguage('en')"
+                    class="lang-btn text-sm px-2 py-1 rounded border transition-all duration-500"
+                  >
+                    EN
+                  </button>
+                  <button
+                    onclick="setLanguage('tr')"
+                    class="lang-btn text-sm px-2 py-1 rounded border transition-all duration-500"
+                  >
+                    TR
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </nav>
 
-    <section id="about" class="w-full h-screen mt-2.5 scroll-mt-[70px]">
+    <!-- ! About section -->
+    <section id="about" class="w-full h-screen mt-2.5 scroll-mt-[50 px]">
       <div class="container max-w-7xl">
         <h2>Men haqimda</h2>
       </div>
     </section>
+
+    <!-- ! Skills section -->
     <section id="skills" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Mening ko'nikmalarim</h2>
       </div>
     </section>
+
+    <!-- ! Projects section -->
     <section id="projects" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Mening loyihalarim</h2>
       </div>
     </section>
+
+    <!-- ! Certificates section -->
     <section id="certificates" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Mening sertifikatlarim</h2>
       </div>
     </section>
+
+    <!-- ! Contact section -->
     <section id="contact" class="w-full h-screen scroll-mt-[60px]">
       <div class="container max-w-7xl">
         <h2>Men bilan bo'glanish</h2>
       </div>
     </section>
+
+    <!-- ! Footer -->
     <footer class="border-t border-black dark:border-white py-3">
       <div class="container max-w-7xl">
         <p class="text-center text-gray-500 dark:text-gray-400">
@@ -149,6 +283,8 @@
         </p>
       </div>
     </footer>
+
+    <!-- ! Script -->
     <script src="./src/script.js"></script>
   </body>
 </html>

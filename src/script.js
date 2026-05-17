@@ -1,4 +1,34 @@
-// theme handling
+// ? HTML elementlarini tanlab olamiz
+const menuBtn = document.getElementById('menu-toggle-btn');
+const btnText = document.getElementById('btn-text');
+const dropdown = document.getElementById('mobile-dropdown');
+
+// ? Siz yozgan holat (state)
+let isOpen = false;
+
+function toggleDropdown() {
+  isOpen = !isOpen;
+
+  if (isOpen) {
+    dropdown.classList.remove('hidden');
+    btnText.innerText = "✕";
+  } else {
+    dropdown.classList.add('hidden');
+    btnText.innerText = "☰";
+  }
+}
+
+menuBtn.addEventListener('click', toggleDropdown);
+
+window.addEventListener('click', (e) => {
+  if (!menuBtn.contains(e.target) && !dropdown.contains(e.target)) {
+    isOpen = false;
+    dropdown.classList.add('hidden');
+    btnText.innerText = "☰";
+  }
+});
+
+// ? theme handling
 function updateThemeIcon(theme) {
   const iconElement = document.getElementById('theme-icon');
   if (iconElement) {
@@ -38,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// translation handling
+// ? translation handling
 const translations = {
   uz: {
     about: "Men haqimda",
@@ -102,7 +132,7 @@ function updateLanguageButtons(activeLang) {
 }
 
 
-// Nav-link active state handling
+// ? Nav-link active state handling
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('preferred_language') || 'uz';
   setLanguage(savedLang);
